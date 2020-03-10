@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="./progressbar.js"></script>
+    </head>
+    <main>
+        <h1>Progress Bar</h1>
+        <progress-bar></progress-bar>
+    </main>
+    <script>
+        (function(){
+            var progBar = document.getElementsByTagName('progress-bar')[0];
+            var init = 0;
+            var setWidthInterval = setInterval(() => {
+                init = init + 1;
+                if(init <= 100){
+                    progBar.setAttribute('complete', init);
+                }else{
+                    clearInterval(setWidthInterval)
+                }
+
+            }, 100);
+        })();
+    </script>
+</html>
